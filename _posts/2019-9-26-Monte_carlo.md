@@ -139,7 +139,6 @@ environment and we care more about the reward in the final step.
 Will start by defining a random policy to explore the environment, then we will
 evaluate the `Q` (state-action) values based on this policy 
 
-**In [688]:**
 
 {% highlight python %}
 def random_policy(env, state=None):
@@ -178,7 +177,6 @@ we visited this state-action pair before:
 
 $\delta_t = (G_{t} - Q(S_t, A_t))$ 
 
-**In [716]:**
 
 {% highlight python %}
 def mc_prediction_q(env, num_episodes, policy, gamma=1.0):
@@ -232,7 +230,6 @@ Q = mc_prediction_q(env, 50000, random_policy)
 Plotting the state-action value in two plots as each state consist of three
 variables : Player's Current Sum - Dealer's Showing Card - Usable Ace 
 
-**In [717]:**
 
 {% highlight python %}
 # obtain the corresponding state-value function
@@ -269,7 +266,6 @@ agent chooses after observing state `s`.
  
 $π(s).= arg max_{a}q(s, a)$ 
 
-**In [6]:**
 
 {% highlight python %}
 def generate_episode_from_Q(env, Q, epsilon, n_actions):
@@ -305,7 +301,6 @@ def generate_episode_from_Q(env, Q, epsilon, n_actions):
     return episode       
 {% endhighlight %}
 
-**In [7]:**
 
 {% highlight python %}
 def evaluate_Q(env, Q, n_episodes=1000):
@@ -329,11 +324,11 @@ from a better policy. Thus, we replace the weighting average with a constant
 alpha that determines how much we want to emphasize later returns and how much
 we forget from the past
 
-$Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \alpha (G_{t} - Q(S_t, A_t))$
+$$Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \alpha (G_{t} - Q(S_t, A_t))$$
 
 We can re-write this equation as:
 
-$Q(S_t,A_t) \leftarrow (1-\alpha)Q(S_t,A_t) + \alpha G_t$
+$$Q(S_t,A_t) \leftarrow (1-\alpha)Q(S_t,A_t) + \alpha G_t$$
 
 - If $\alpha=0$, then the action-value function estimate is never updated by the
 agent.
@@ -406,7 +401,6 @@ def mc_control(env, num_episodes, alpha, gamma=1.0, epsilon_start=0.99,
 
 {% endhighlight %}
 
-**In [32]:**
 
 {% highlight python %}
 # obtain the estimated optimal policy and action-value function
@@ -416,7 +410,6 @@ policy, Q = mc_control(env, num_episodes=1000000, alpha=0.02, gamma=1.0,
 
     Episode 1000000/1000000.
 
-**In [33]:**
 
 {% highlight python %}
 evaluate_Q(env, Q)
@@ -449,20 +442,20 @@ Finally, we visualize the policy that is estimated to be optimal.
  
 Epsilon greedy.
 
-$
+$$
 \pi(a|s) \longleftarrow
 \begin{cases}
 \displaystyle 1-\epsilon +\epsilon/|\mathcal{A}(s)|&amp;amp; \textrm{if
 }a\textrm{ maximizes }Q(s,a)\\
 \displaystyle \epsilon/|\mathcal{A}(s)| &amp;amp; \textrm{else}
-$ 
+$$ 
  
 
 
-$\pi(a|s) \longleftarrow
+$$\pi(a|s) \longleftarrow
 \displaystyle 1-\epsilon +\epsilon/|\mathcal{A}(s)| \textrm{if }a\textrm{
 maximizes }Q(s,a) \\
-\epsilon \mathcal{A}(s)|  \textrm{else} $
+\epsilon \mathcal{A}(s)|  \textrm{else} $$
  
 
 **In [35]:**
