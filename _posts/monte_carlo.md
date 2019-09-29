@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: "Monte_Carlo"
 tags:
     - python
@@ -165,17 +165,18 @@ def generate_episode_from_policy(env, policy):
 {% endhighlight %}
  
 ### Updating Q values Using Incremental Mean
-
-<div> 
-    $Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \frac{1}{N(S_{t}, A_{t})}(G_{t} -
+<div>
+$Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \frac{1}{N(S_{t}, A_{t})}(G_{t} -
 Q(S_t - A_t))$
-</div>
+<\div>
+
+
 
 We update Q value after each episode by the error between estimated return
 compared to stored Q value for that state-action averaged by the number of times
 we visited this state-action pair before:
 
-$\delta_t = (G_{t} - Q(S_t, A_t))$ 
+<span> $\delta_t = (G_{t} - Q(S_t, A_t))$ </span> 
 
 **In [716]:**
 
@@ -328,11 +329,17 @@ from a better policy. Thus, we replace the weighting average with a constant
 alpha that determines how much we want to emphasize later returns and how much
 we forget from the past
 
-$Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \alpha (G_{t} - Q(S_t, A_t))$
+<span> $Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \alpha (G_{t} - Q(S_t,
+A_t))$ </span>
+
+
 
 We can re-write this equation as:
 
+<div>
 $Q(S_t,A_t) \leftarrow (1-\alpha)Q(S_t,A_t) + \alpha G_t$
+</div>
+
 
 - If $\alpha=0$, then the action-value function estimate is never updated by the
 agent.
