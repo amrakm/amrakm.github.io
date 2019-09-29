@@ -108,8 +108,8 @@ env = gym.make('Blackjack-v0')
 
  
 Each state is a 3-tuple of:
-- the player's current sum $\in \{0, 1, \ldots, 31\}$,
-- the dealer's face up card $\in \{1, \ldots, 10\}$, and
+- the player's current sum $$\in \{0, 1, \ldots, 31\}$$,
+- the dealer's face up card $$\in \{1, \ldots, 10\}$$, and
 - whether or not the player has a usable ace (`no` $=0$, `yes` $=1$).
 
 The agent has two potential actions:
@@ -126,7 +126,7 @@ Definitions:
 
 `env`: This is an instance of OpenAI Gym's Blackjack environment.
 `episode`: This is a list of (state, action, reward) tuples (of tuples) and
-corresponds to $(S_0, A_0, R_1, \ldots, S_{T-1}, A_{T-1}, R_{T})$, where $T$ is
+corresponds to $$(S_0, A_0, R_1, \ldots, S_{T-1}, A_{T-1}, R_{T})$$, where $T$ is
 the final time step.
 `Q`: A dictionary (of one-dimensional arrays) where `Q[s][a]` is the estimated
 action value corresponding to state `s` and action `a`.
@@ -167,15 +167,15 @@ def generate_episode_from_policy(env, policy):
 ### Updating Q values Using Incremental Mean
 
 <div> 
-    $Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \frac{1}{N(S_{t}, A_{t})}(G_{t} -
-Q(S_t - A_t))$
+    $$Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \frac{1}{N(S_{t}, A_{t})}(G_{t} -
+Q(S_t - A_t))$$
 </div>
 
 We update Q value after each episode by the error between estimated return
 compared to stored Q value for that state-action averaged by the number of times
 we visited this state-action pair before:
 
-$\delta_t = (G_{t} - Q(S_t, A_t))$ 
+$$\delta_t = (G_{t} - Q(S_t, A_t))$$
 
 
 {% highlight python %}
