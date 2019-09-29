@@ -166,8 +166,10 @@ def generate_episode_from_policy(env, policy):
  
 ### Updating Q values Using Incremental Mean
 
-$Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \frac{1}{N(S_{t}, A_{t})}(G_{t} -
+<div> 
+    $Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \frac{1}{N(S_{t}, A_{t})}(G_{t} -
 Q(S_t - A_t))$
+</div>
 
 We update Q value after each episode by the error between estimated return
 compared to stored Q value for that state-action averaged by the number of times
