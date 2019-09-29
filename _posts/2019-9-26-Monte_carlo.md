@@ -61,7 +61,7 @@ environment’s transition dynamics
 Monte Carlo estimate of stat-action values can't use determinstic policies as it
 will never visit some trajectories, so we add an element of exploration. 
  
- The first-visit MC method estimates $v_{π}(s)$
+ The first-visit MC method estimates $$v_{π}(s)$$
 as the average of the returns following first visits to s 
  
 every-visit MC method averages
@@ -78,7 +78,7 @@ from collections import Counter
 from plot_utils import plot_blackjack_values, plot_policy
 {% endhighlight %}
  
-#### First-visit MC prediction, for estimating $V ≈ vπ$
+#### First-visit MC prediction, for estimating $$V ≈ vπ$$
     Initialize:
         π ← policy to be evaluated
         V ← an arbitrary state-value function
