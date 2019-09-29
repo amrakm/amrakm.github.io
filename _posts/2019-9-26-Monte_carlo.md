@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: "Monte_Carlo"
 tags:
     - python
