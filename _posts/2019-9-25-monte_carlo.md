@@ -95,8 +95,8 @@ env = gym.make('Blackjack-v0')
 
 
 Each state is a 3-tuple of:
-- the player's current sum $\in \{0, 1, \ldots, 31\}$,
-- the dealer's face up card $\in \{1, \ldots, 10\}$, and
+- the player's current sum $$\in \{0, 1, \ldots, 31\}$$,
+- the dealer's face up card $$\in \{1, \ldots, 10\}$$, and
 - whether or not the player has a usable ace (`no` $=0$, `yes` $=1$).
 
 The agent has two potential actions:
@@ -111,7 +111,7 @@ The agent has two potential actions:
 Definitions:
 
 `env`: This is an instance of OpenAI Gym's Blackjack environment.     
-`episode`: This is a list of (state, action, reward) tuples (of tuples) and corresponds to $(S_0, A_0, R_1, \ldots, S_{T-1}, A_{T-1}, R_{T})$, where $T$ is the final time step.      
+`episode`: This is a list of (state, action, reward) tuples (of tuples) and corresponds to $$(S_0, A_0, R_1, \ldots, S_{T-1}, A_{T-1}, R_{T})$$, where $T$ is the final time step.      
 `Q`: A dictionary (of one-dimensional arrays) where `Q[s][a]` is the estimated action value corresponding to state `s` and action `a`.    
 `gamma`: The discount rate.  It must be a value between 0 and 1, inclusive (default value: `1`). In this case we will select `1` as it is an episodic environment and we care more about the reward in the final step.     
 `alpha`: This is the step-size parameter for the update step.
@@ -120,7 +120,7 @@ Definitions:
 #### First-visit MC prediction, for estimating $V ≈ vπ$
 
 
-The first-visit MC method estimates $v_{π}(s)$
+The first-visit MC method estimates $$v_{π}(s)$$
 as the average of the returns following first visits to s
 
 ##### Algorithm:
@@ -400,7 +400,7 @@ plot_policy(policy)
 ```
 
 
-![png](/images/Monte_Carlo_28_0.png)
+![png](/images/monte_carlo_28_0.png.png)
 
 
 The **true** optimal policy $\pi_*$ can be found in Figure 5.2 of the [textbook](http://incompleteideas.net/book/bookdraft2017nov5.pdf) (and appears below). 
