@@ -143,13 +143,12 @@ Source:
 [Richard S. Sutton](http://incompleteideas.net/book/bookdraft2017nov5.pdf)
 
 #### Updating Q values Using Incremental Mean 
-<div>
+
 $$Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \frac{1}{N(S_{t}, A_{t})}(G_{t} - Q(S_t - A_t))$$
-<\div>
     
 We update Q value after each episode by the amount of error between estimated return compared to stored Q value for that state-action, averaged by the number of times we visited this state-action pair before: 
 
-<span> $$\delta_t = (G_{t} - Q(S_t, A_t))$$ </span>
+$$\delta_t = (G_{t} - Q(S_t, A_t))$$
 
 Will start by defining a random policy to explore the environment, then we will evaluate the `Q` (state-action) values based on this policy
 
