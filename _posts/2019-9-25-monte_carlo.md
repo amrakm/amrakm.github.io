@@ -1,5 +1,6 @@
 ---
 layout: single
+classes: wide
 title: "Monte Carlo in the Context of Reinforcement Learning"
 mathjax: true
 tags:
