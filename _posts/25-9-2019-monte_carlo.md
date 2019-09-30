@@ -253,17 +253,6 @@ The algorithm has four arguments:
 - `Q`: This is a dictionary (of one-dimensional arrays) where `Q[s][a]` is the estimated action value corresponding to state `s` and action `a`.
 - `policy`: This is a dictionary where `policy[s]` returns the action that the agent chooses after observing state `s`.
 
-$$π(s) = argmax_{a}q(s, a)$$
-
-
-```python
-!ls ~/repos/amrakm.github.io/images/
-```
-
-    first_visit_MC.png                 monte_carlo_28_0.png
-    mc_control_constant_alpha_GLIE.png monte_carlo_32_0.png
-    monte_carlo_17_1.png               policy_iteration.png
-
 
 #### Algorithm
 ![MC_GLIE](/images/mc_control_constant_alpha_GLIE.png)
@@ -303,19 +292,6 @@ def generate_episode_from_Q(env, Q, epsilon, n_actions):
     return episode       
 ```
 
-
-```python
-def evaluate_Q(env, Q, n_episodes=1000):
-    
-    status_map = {-1:'loss', 0:'draw', 1:'win'}
-
-    average_reward = []
-    for _ in range(n_episodes):
-
-        average_reward.append(generate_episode_from_Q(env, Q, epsilon=0, n_actions=env.action_space.n)[-1][-1])
-
-    return {status_map[k]:v for k,v in Counter(average_reward).items()}
-```
 
 #### Constant-alpha
 
@@ -403,20 +379,6 @@ def mc_control(env, num_episodes, alpha, gamma=1.0, epsilon_start=0.99,
 policy, Q = mc_control(env, num_episodes=1000000, alpha=0.02, gamma=1.0,
                        epsilon_start=1., epsilon_decay=0.99999, epsilon_min=0.05)
 ```
-
-    Episode 1000000/1000000.
-
-
-```python
-evaluate_Q(env, Q)
-```
-
-
-
-
-    {'draw': 81, 'win': 413, 'loss': 506}
-
-
 
 ### Plotting the corresponding state-value function.
 
