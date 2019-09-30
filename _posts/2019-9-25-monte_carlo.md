@@ -238,10 +238,9 @@ V_to_plot = dict((k,(k[0]>18)*(np.dot([0.8, 0.2],v)) + (k[0]<=18)*(np.dot([0.2, 
 plot_blackjack_values(V_to_plot)
 ```
 
-    Episode 50000/50000.
 
 
-![png](Monte_Carlo_files/Monte_Carlo_14_1.png)
+![png](/images/Monte_Carlo_14_1.png)
 
 
 ## MC Control:
@@ -297,19 +296,17 @@ def generate_episode_from_Q(env, Q, epsilon, n_actions):
 
 We would like to give more weights to returns estimated recently more than ones estimated at the first few episodes as we expect the recent ones to be generated from a better policy. Thus, we replace the weighting average with a constant alpha that determines how much we want to emphasize later returns and how much we forget from the past
 
-<span> $Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \alpha (G_{t} - Q(S_t, A_t))$ </span>
+$$Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \alpha (G_{t} - Q(S_t, A_t))$$
 
 
 
 We can re-write this equation as:
 
-<div>
-$Q(S_t,A_t) \leftarrow (1-\alpha)Q(S_t,A_t) + \alpha G_t$
-</div>
+$$Q(S_t,A_t) \leftarrow (1-\alpha)Q(S_t,A_t) + \alpha G_t$$    
 
 
-- If $\alpha=0$, then the action-value function estimate is never updated by the agent.
-- If $\alpha = 1$, then the final value estimate for each state-action pair is always equal to the last return that was experienced by the agent (after visiting the pair).
+- If $$\alpha=0$$, then the action-value function estimate is never updated by the agent.
+- If $$\alpha = 1$$, then the final value estimate for each state-action pair is always equal to the last return that was experienced by the agent (after visiting the pair).
 
 
 ```python
@@ -391,7 +388,7 @@ plot_blackjack_values(V)
 ```
 
 
-![png](Monte_Carlo_files/Monte_Carlo_26_0.png)
+![png](/images/Monte_Carlo_26_0.png)
 
 
 Finally, we visualize the policy that is estimated to be optimal.
@@ -403,7 +400,7 @@ plot_policy(policy)
 ```
 
 
-![png](Monte_Carlo_files/Monte_Carlo_28_0.png)
+![png](/images/Monte_Carlo_28_0.png)
 
 
 The **true** optimal policy $\pi_*$ can be found in Figure 5.2 of the [textbook](http://incompleteideas.net/book/bookdraft2017nov5.pdf) (and appears below). 
