@@ -15,7 +15,7 @@
 minimal_mistakes_skin    : "air" #"mint", "aqua", "dirt", "air", "aqua", "contrast", "dark", "default", "neon", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
+locale                   : "en-UK"
 title                    : "Site Title"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
@@ -107,13 +107,13 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Amr"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  bio              : ""
+  location         : "London"
   email            :
   links:
-    - label: "Email"
+    - label: "amrmashlah@gmail.com"
       icon: "fas fa-fw fa-envelope-square"
       # url: mailto:your.name@email.com
     - label: "Website"
