@@ -400,8 +400,8 @@ plot_policy(policy)
 ```
 
 
-![png](/images/monte_carlo_28_0.png.png)
+![png](/images/monte_carlo_28_0.png)
 
 
-The **true** optimal policy $\pi_*$ can be found in Figure 5.2 of the [textbook](http://incompleteideas.net/book/bookdraft2017nov5.pdf) (and appears below). 
+The **true** optimal policy $$\pi_*$$ can be found in Figure 5.2 of the [textbook](http://incompleteideas.net/book/bookdraft2017nov5.pdf) (and appears below). 
 ![True Optimal Policy](/images/optimal.png)
