@@ -9,7 +9,7 @@ tags:
     - reinforcement learning
 --- 
 
-In this notebook I will share my study notes along with implementation of few Monte Carlo (MC) algorithms that is introduced in [Richard Sutton's book](http://incompleteideas.net/book/bookdraft2017nov5.pdf) applied to Blackjack environment of [OpenAI's gym](https://github.com/openai/gym).
+In this notebook I will share my study notes along with implementation of few Monte Carlo (MC) algorithms that are introduced in [Richard Sutton's book](http://incompleteideas.net/book/bookdraft2017nov5.pdf) applied to Blackjack environment of [OpenAI's gym](https://github.com/openai/gym).
 
 ------------
 
