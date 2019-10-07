@@ -112,7 +112,7 @@ The agent has two potential actions:
 Definitions:
 
 `env`: This is an instance of OpenAI Gym's Blackjack environment.     
-`episode`: This is a list of (state, action, reward) tuples (of tuples) and corresponds to $$(S_0, A_0, R_1, \ldots, S_{T-1}, A_{T-1}, R_{T})$$, where $T$ is the final time step.      
+`episode`: This is a list of (state, action, reward) tuples (of tuples) and corresponds to $$(S_0, A_0, R_1, \ldots, S_{T-1}, A_{T-1}, R_{T})$$, where $$T$$ is the final time step.      
 `Q`: A dictionary (of one-dimensional arrays) where `Q[s][a]` is the estimated action value corresponding to state `s` and action `a`.    
 `gamma`: The discount rate.  It must be a value between 0 and 1, inclusive (default value: `1`). In this case we will select `1` as it is an episodic environment and we care more about the reward in the final step.     
 `alpha`: This is the step-size parameter for the update step.
