@@ -98,7 +98,7 @@ env = gym.make('Blackjack-v0')
 Each state is a 3-tuple of:
 - the player's current sum $$\in \{0, 1, \ldots, 31\}$$,
 - the dealer's face up card $$\in \{1, \ldots, 10\}$$, and
-- whether or not the player has a usable ace (`no` $=0$, `yes` $=1$).
+- whether or not the player has a usable ace (`no` $$=0$$, `yes` $$=1$$).
 
 The agent has two potential actions:
 
@@ -118,7 +118,7 @@ Definitions:
 `alpha`: This is the step-size parameter for the update step.
 
 
-#### First-visit MC prediction, for estimating $V ≈ vπ$
+#### First-visit MC prediction, for estimating $$V ≈ vπ$$
 
 
 The first-visit MC method estimates $$v_{π}(s)$$
@@ -159,11 +159,8 @@ def random_policy(env, state=None):
     return np.random.choice(env.action_space.n, 1)[0]
 
 def generate_episode_from_policy(env, policy):
-    '''
-    env: 
-    policy:
-    '''
-    
+
+
     episode = [] 
     state = env.reset()
     
@@ -217,7 +214,7 @@ def mc_prediction_q(env, num_episodes, policy, gamma=1.0):
     return Q
 ```
 
-### Evaluating the state-action value ($Q$) using random policy 
+### Evaluating the state-action value ($$Q$$) using random policy 
 
 
 ```python
@@ -225,7 +222,7 @@ def mc_prediction_q(env, num_episodes, policy, gamma=1.0):
 Q = mc_prediction_q(env, 50000, random_policy)
 ```
 
-#### Visualising Q function in a 3D plot
+### Visualising Q function in a 3D plot:
 
 Using [Udacity](https://github.com/udacity/deep-reinforcement-learning/blob/master/monte-carlo/plot_utils.py)'s visualisation function for ploting state-action values of Blackjack environment.    
 Plotting the state-action value in two plots as each state consist of three variables : Player's Current Sum - Dealer's Showing Card - Usable Ace
@@ -377,7 +374,7 @@ policy, Q = mc_control(env, num_episodes=1000000, alpha=0.02, gamma=1.0,
                        epsilon_start=1., epsilon_decay=0.99999, epsilon_min=0.05)
 ```
 
-### Plotting the corresponding state-value function.
+### Plotting the corresponding state-value function:
 
 
 ```python
